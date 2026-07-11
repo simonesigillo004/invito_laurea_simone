@@ -11,40 +11,54 @@
 
 body {
     margin: 0;
-    padding: 20px;
     background: #f8f6f0;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-iframe {
+.container {
+    position: relative;
     width: 100%;
-    height: 75vh;
-    border: none;
+    max-width: 1654px;
 }
 
-/* Pulsanti WhatsApp */
-.bottone {
+img {
+    width: 100%;
     display: block;
-    max-width: 320px;
-    margin: 15px auto;
-    padding: 16px;
-    border-radius: 30px;
-    background: #D88A2D;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
 }
 
-/* Link posizione */
-.posizione {
+.link {
+    position: absolute;
     display: block;
-    margin: 20px auto;
-    color: #333;
-    text-decoration: underline;
-    font-size: 16px;
 }
+
+
+/* LUOGO - sotto l'orario */
+.luogo {
+    top: 42%;
+    left: 30%;
+    width: 40%;
+    height: 8%;
+}
+
+
+/* SI - basso sinistra */
+.si {
+    bottom: 8%;
+    left: 15%;
+    width: 25%;
+    height: 8%;
+}
+
+
+/* NO - basso destra */
+.no {
+    bottom: 8%;
+    right: 15%;
+    width: 25%;
+    height: 8%;
+}
+
 
 </style>
 
@@ -52,23 +66,27 @@ iframe {
 
 <body>
 
-<iframe src="invito.pdf"></iframe>
+<div class="container">
+
+<img src="invito.png" alt="Invito Laurea Simone">
 
 
-<a class="bottone" href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea">
-✅ Confermo la mia presenza
+<a class="link luogo"
+href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z">
 </a>
 
 
-<a class="bottone" href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riesco%20a%20partecipare%20alla%20tua%20laurea">
-❌ Non potrò partecipare
+<a class="link si"
+href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea">
 </a>
 
 
-<a class="posizione" href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z/data=!3m1!4b1!4m6!3m5!1s0x133b1269a5f5951b:0x2209d27e8e584b60!8m2!3d40.7876324!4d40.079376!16s%2Fg%2F11cs1fjpmc?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D">
-📍 Indicazioni per la location
+<a class="link no"
+href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riesco%20a%20partecipare%20alla%20tua%20laurea">
 </a>
 
+
+</div>
 
 </body>
 
