@@ -18,33 +18,29 @@
 }
 
 
-html, body {
-    width: 100%;
-    height: 100%;
+body {
     background: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
-/* Contenitore a schermo intero */
+/* Contenitore */
 
 .container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    max-width: 1654px;
+    margin: 0 auto;
 }
-
 
 
 /* Immagine invito */
 
 img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: contain;
+    width: 100%;
+    height: auto;
     display: block;
 }
-
 
 
 /* Zone cliccabili */
@@ -57,7 +53,6 @@ img {
 
 
 /* ---------- LUOGO ---------- */
-/* Centrato e leggermente più largo per il tocco da telefono */
 
 .luogo {
     left: 32%;
@@ -69,7 +64,6 @@ img {
 
 
 /* ---------- SI ---------- */
-/* In basso a sinistra */
 
 .si {
     left: 5%;
@@ -81,7 +75,6 @@ img {
 
 
 /* ---------- NO ---------- */
-/* In basso a destra */
 
 .no {
     left: 73%;
@@ -107,7 +100,7 @@ img {
 
 
 
-<!-- LOCATION -->
+<!-- LINK LOCATION -->
 
 <a class="link luogo"
 href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z">
@@ -115,7 +108,7 @@ href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z"
 
 
 
-<!-- WHATSAPP SI -->
+<!-- LINK WHATSAPP SI -->
 
 <a class="link si"
 href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea">
@@ -123,7 +116,7 @@ href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tu
 
 
 
-<!-- WHATSAPP NO -->
+<!-- LINK WHATSAPP NO -->
 
 <a class="link no"
 href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riesco%20a%20partecipare%20alla%20tua%20laurea">
