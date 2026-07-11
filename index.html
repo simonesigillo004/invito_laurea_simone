@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +8,60 @@
 
 <style>
 
-body {
-    margin: 0;
-    background: #f8f6f0;
-    display: flex;
-    justify-content: center;
+body{
+    margin:0;
+    background:#f8f6f0;
+    display:flex;
+    justify-content:center;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 1654px;
+.container{
+    position:relative;
+    width:100%;
+    max-width:1536px;
 }
 
-img {
-    width: 100%;
-    display: block;
+.container img{
+    width:100%;
+    display:block;
 }
 
-.link {
-    position: absolute;
-    display: block;
+.link{
+    position:absolute;
+    display:block;
+    /* Per verificare l'allineamento durante le prove:
+    background:rgba(255,0,0,.25);
+    */
 }
 
+/* ---------- LIDO FLORIDA ---------- */
 
-/* LUOGO - sotto l'orario */
-.luogo {
-    top: 42%;
-    left: 30%;
-    width: 40%;
-    height: 8%;
+.luogo{
+    left:5%;
+    top:58.7%;
+    width:90%;
+    height:10%;
 }
 
+/* ---------- SI ---------- */
 
-/* SI - basso sinistra */
-.si {
-    bottom: 8%;
-    left: 15%;
-    width: 25%;
-    height: 8%;
+.si{
+    left:5%;
+    top:86.2%;
+    width:22%;
+    height:10%;
 }
 
+/* ---------- NO ---------- */
 
-/* NO - basso destra */
-.no {
-    bottom: 8%;
-    right: 15%;
-    width: 25%;
-    height: 8%;
+.no{
+    left:73%;
+    top:86.2%;
+    width:22%;
+    height:10%;
 }
-
 
 </style>
-
 </head>
 
 <body>
@@ -70,24 +70,19 @@ img {
 
 <img src="invito.png" alt="Invito Laurea Simone">
 
-
 <a class="link luogo"
-href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z">
-</a>
-
+href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z"
+target="_blank"></a>
 
 <a class="link si"
-href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea">
-</a>
-
+href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea"
+target="_blank"></a>
 
 <a class="link no"
-href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riesco%20a%20partecipare%20alla%20tua%20laurea">
-</a>
-
+href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riesco%20a%20partecipare%20alla%20tua%20laurea"
+target="_blank"></a>
 
 </div>
 
 </body>
-
 </html>
