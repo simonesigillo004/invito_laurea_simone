@@ -6,86 +6,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Invito Laurea Simone</title>
-
+<title>Regolazione Invito</title>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:white;
+    overflow:hidden;
 }
 
 
-body {
-    background: #ffffff;
-    overflow-x: hidden;
+.container{
+    position:relative;
+    width:100%;
+    max-width:1654px;
+    margin:auto;
 }
 
 
-/* Contenitore */
-
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 1654px;
-    margin: 0 auto;
+img{
+    width:100%;
+    display:block;
 }
 
 
-/* Immagine invito */
+/* BOX DI REGOLAZIONE */
 
-img {
-    width: 100%;
-    height: auto;
-    display: block;
+.box{
+    position:absolute;
+    cursor:pointer;
 }
 
 
-/* Zone cliccabili */
-
-.link {
-    position: absolute;
-    display: block;
-
-    /* ATTIVA SOLO PER LA REGOLAZIONE */
-    background: rgba(255,0,0,0.25);
+#si{
+    background:rgba(255,0,0,0.4);
+    left:16%;
+    top:80%;
+    width:8%;
+    height:8%;
 }
 
 
-
-/* ---------- LUOGO ---------- */
-
-.luogo {
-    left: 32%;
-    top: 58%;
-    width: 36%;
-    height: 6%;
+#no{
+    background:rgba(0,0,255,0.4);
+    left:76%;
+    top:80%;
+    width:8%;
+    height:8%;
 }
 
 
-
-/* ---------- SI ---------- */
-
-.si {
-    left: 18%;
-    top: 80%;
-    width: 8%;
-    height: 8%;
+#luogo{
+    background:rgba(0,255,0,0.4);
+    left:32%;
+    top:66%;
+    width:36%;
+    height:6%;
 }
 
 
-
-/* ---------- NO ---------- */
-
-.no {
-    left: 74%;
-    top: 80%;
-    width: 8%;
-    height: 8%;
+#info{
+    position:fixed;
+    top:10px;
+    left:10px;
+    background:white;
+    padding:10px;
+    font-family:Arial;
+    font-size:14px;
+    z-index:10;
 }
-
 
 
 </style>
@@ -96,38 +91,83 @@ img {
 <body>
 
 
+<div id="info">
+Seleziona un box:<br>
+S = SI 🔴<br>
+N = NO 🔵<br>
+L = LUOGO 🟢<br>
+Usa le frecce per spostare<br><br>
+<div id="coord"></div>
+</div>
+
+
 <div class="container">
 
-
-<img src="invito.png" alt="Invito Laurea Simone">
-
+<img src="invito.png">
 
 
-<!-- LINK LOCATION -->
+<div id="si" class="box"></div>
 
-<a class="link luogo"
-href="https://www.google.com/maps/place/Lido+Florida/@40.7876364,14.0768011,17z">
-</a>
+<div id="no" class="box"></div>
 
-
-
-<!-- WHATSAPP SI -->
-
-<a class="link si"
-href="https://wa.me/393511085008?text=Confermo%20la%20mia%20presenza%20alla%20tua%20laurea.%20Non%20vedo%20l%27ora%20di%20festeggiare%20insieme%20a%20te">
-</a>
-
-
-
-<!-- WHATSAPP NO -->
-
-<a class="link no"
-href="https://wa.me/393511085008?text=Mi%20dispiace%2C%20non%20riuscir%C3%B2%20a%20partecipare%20alla%20tua%20laurea">
-</a>
-
+<div id="luogo" class="box"></div>
 
 
 </div>
+
+
+<script>
+
+
+let selected = "si";
+
+
+let boxes = {
+si: document.getElementById("si"),
+no: document.getElementById("no"),
+luogo: document.getElementById("luogo")
+};
+
+
+
+document.addEventListener("keydown", function(e){
+
+
+if(e.key.toLowerCase()=="s") selected="si";
+if(e.key.toLowerCase()=="n") selected="no";
+if(e.key.toLowerCase()=="l") selected="luogo";
+
+
+let box = boxes[selected];
+
+let style = window.getComputedStyle(box);
+
+
+let left=parseFloat(style.left);
+let top=parseFloat(style.top);
+
+
+
+if(e.key=="ArrowRight") left+=0.5;
+if(e.key=="ArrowLeft") left-=0.5;
+if(e.key=="ArrowDown") top+=0.5;
+if(e.key=="ArrowUp") top-=0.5;
+
+
+box.style.left=left+"%";
+box.style.top=top+"%";
+
+
+document.getElementById("coord").innerHTML=
+"<b>"+selected+"</b><br>"+
+"left: "+left.toFixed(1)+"%<br>"+
+"top: "+top.toFixed(1)+"%";
+
+
+});
+
+
+</script>
 
 
 </body>
